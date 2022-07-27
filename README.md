@@ -12,14 +12,14 @@ I am using Python 3.5.1, but any Python 3.5+ should work for running. This progr
 and use of dependencies or other external resources
 
 **How to run**
-*Option 1:*
-- Open a command terminal
-- Run the file by doing the following command: '{path-to-python.exe} {path-to-folder-with-file}/calculator.py'
+  **Option 1:**
+  - Open a command terminal
+  - Run the file by doing the following command: '{path-to-python.exe} {path-to-folder-with-file}/calculator.py'
 
-*Option 2:*
-- Open an IDE
-- Navigate to the folder where the calculator.py file is stored
-- Run the calculator.py file
+  **Option 2:**
+  - Open an IDE
+  - Navigate to the folder where the calculator.py file is stored
+  - Run the calculator.py file
 
 **How to use**
 - Only enter numbers between -100,000,000 and 100,000,000
