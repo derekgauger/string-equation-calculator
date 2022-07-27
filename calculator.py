@@ -24,7 +24,7 @@ def get_numbers_and_symbols(equation):
     symbols = re.findall(r'-?\d+\s*([+-])', equation)
 
     for number in numbers:
-        if int(number) > 100000000 or int(number < -100000000):
+        if int(number) > 100000000 or int(number) < -100000000:
             raise ValueError("Input numbers cannot exceed 100,000,000")
 
     return numbers, symbols
@@ -103,6 +103,9 @@ def find_next_parentheses(equation):
 # Parses the equation given
 # Returns the equations calculated resultant value
 def parse_input(equation):
+
+    check_equation(equation)
+
     # Deals with parentheses and keeps calculating values until there are no longer any parentheses
     equation = parse_parentheses(equation)
 
@@ -115,12 +118,23 @@ def parse_input(equation):
     return result
 
 
+def check_equation(equation):
+    open_para_count = equation.count('(')
+    close_para_count = equation.count(')')
+
+    if open_para_count != close_para_count:
+        raise ArithmeticError("There must be an equal number of '(' and ')' in the equation")
+
+    for char in equation:
+        if not char.isdigit() and (char != "(" or char != ")"):
+            raise ArithmeticError("Invalid character '{}' in equation".format(char))
+
+
 # Main method
 def main():
 
     while True:
         equation = input("Input: ")
-
         # Round-a-bout way of not having to add a pip library dependency to the project
         if equation.lower() == '0' or equation == "" or equation.lower() == 'esc' or equation.lower() == 'escape':
             break
