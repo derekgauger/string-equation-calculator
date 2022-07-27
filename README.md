@@ -11,7 +11,7 @@ I decided against adding a pip library dependency to this project, so to exit do
 I am using Python 3.5.1, but any Python 3.5+ should work for running. This program does not require
 and use of dependencies or other external resources
 
-**How to run**
+**How to run:**
   **Option 1:**
   - Open a command terminal
   - Run the file by doing the following command: '{path-to-python.exe} {path-to-folder-with-file}/calculator.py'
