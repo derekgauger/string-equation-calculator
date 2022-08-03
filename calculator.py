@@ -43,6 +43,9 @@ def calculate(numbers, symbols):
 
         num = int(numbers[i])
         operation = symbols[i - 1]
+        print(calculated_value)
+        print(operation)
+        print(num)
 
         if operation == '+':
             calculated_value += num
@@ -125,8 +128,10 @@ def check_equation(equation):
     if open_para_count != close_para_count:
         raise ArithmeticError("There must be an equal number of '(' and ')' in the equation")
 
+    allowed_chars = "()+- "
+
     for char in equation:
-        if not char.isdigit() and (char != "(" or char != ")"):
+        if not char.isdigit() and char not in allowed_chars:
             raise ArithmeticError("Invalid character '{}' in equation".format(char))
 
 
